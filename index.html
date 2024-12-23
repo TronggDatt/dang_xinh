@@ -32,7 +32,6 @@
 <svg
         class="mainSVG"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 800 600"
         style="visibility: visible"
 >
@@ -137,7 +136,6 @@
                 <feFuncR type="discrete" tableValues="0.8"></feFuncR>
                 <feFuncG type="discrete" tableValues="0.3"></feFuncG>
                 <feFuncB type="discrete" tableValues="0.2"></feFuncB>
-                <!--<feFuncA type="linear" slope="1" intercept="0" />-->
             </feComponentTransfer>
 
             <feComposite in="SourceGraphic" operator="over"></feComposite>
@@ -338,13 +336,10 @@
                 }),
                 gsap.timeline().to(a, {
                     duration: gsap.utils.random(0.61, 6),
-                    physics2D: {
-                        velocity: gsap.utils.random(-23, 23),
-                        angle: gsap.utils.random(-180, 180),
-                        gravity: gsap.utils.random(-6, 50),
-                    },
-                    scale: 0,
+                    x: "+=" + gsap.utils.random(-100, 100),
+                    y: "+=" + gsap.utils.random(-100, 100),
                     rotation: gsap.utils.random(-123, 360),
+                    scale: 0,
                     ease: "power1",
                     onStart: r,
                     onStartParams: [a],
